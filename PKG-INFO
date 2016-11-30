@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: netsyslog
+Version: 0.1.0
+Summary: Send log messages to remote syslog servers
+Home-page: http://hacksaw.sourceforge.net/netsyslog/
+Author: Graham Ashton
+Author-email: ashtong@users.sourceforge.net
+License: UNKNOWN
+Description: netsyslog is a Python module that enables
+        you to construct syslog messages and send them (via UDP) to a
+        remote syslog server. Unlike other syslog modules it allows you
+        to set the metadata (e.g. time, host name, program name, etc.)
+        yourself, giving you full control over the contents of the UDP
+        packets that it creates.
+Platform: UNKNOWN

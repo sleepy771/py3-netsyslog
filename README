@@ -1,0 +1,7 @@
+README
+======
+
+This is unofficial port of netsyslog library written for python2 to python3.
+Library api should be fully compatible with original netsyslog library.
+
+For more information visit pages of original project http://hacksaw.sourceforge.net/netsyslog/
