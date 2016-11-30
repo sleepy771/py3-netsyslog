@@ -1,38 +1,45 @@
-# Copyright (C) 2005 Graham Ashton <ashtong@users.sourceforge.net>
-#
-# $Id: setup.py,v 1.3 2006/02/13 01:53:56 ashtong Exp $
-
-
-from distutils.core import setup
+#! /usr/bin/env python3
+from setuptools import setup
+from setuptools import find_packages
 
 import netsyslog
 
 
-if __name__ == "__main__":
-    setup(
-        py_modules=["netsyslog"],
-        name="py3-netsyslog",
-        version=netsyslog.__version__,
-        author="Graham Ashton",
-        author_email="ashtong@users.sourceforge.net",
-        maintainer="Filip Hornak",
-        maintainer_email="sleepy771@gmail.com",
-        url="http://github.com/sleepy771/py3-netsyslog",
-        description="Send log messages to remote syslog servers",
-        long_description="""netsyslog is a Python module that enables
-          you to construct syslog messages and send them (via UDP) to a
-          remote syslog server. Unlike other syslog modules it allows you
-          to set the metadata (e.g. time, host name, program name, etc.)
-          yourself, giving you full control over the contents of the UDP
-          packets that it creates.""",
-        install_requires=[],
-        test_require=['pytest', 'mock'],
+setup(
+    py_modules=['netsyslog']
+    name='py3-netsyslog',
+    version=netsyslog.__version__,
+    description="Send log messages to remote syslog servers.",
+    long_description=open('README.rst').read(),
+    url='https://github.com/sleepy771/py3-netsyslog',
 
-        test_suite='py.test',
-        extreas_require={
-            'test': [
-                'pytest',
-                'mock'
-            ]
-        }
-    )
+    author='Filip Hornak',
+    author_email='sleepy771@gmail.com',
+
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        'Intended Audience :: Developers',
+
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+
+        "Topic :: System :: Networking",
+        "Topic :: System :: Networking :: Monitoring",
+
+    ],
+    zip_safe=False,
+    include_package_data=True,
+    install_requires=open("requirements.txt").read().splitlines(),
+
+    test_suite='py.test',
+    tests_require=["pytest"],
+    extras_require={
+         "test": [
+             "pytest",
+         ],
+    #     "docs": [
+    #         "sphinx",
+    #         "sphinxcontrib-napoleon",
+    #     ]
+    },
+)
