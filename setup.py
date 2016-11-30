@@ -6,7 +6,7 @@ import netsyslog
 
 
 setup(
-    py_modules=['netsyslog']
+    py_modules=['netsyslog'],
     name='py3-netsyslog',
     version=netsyslog.__version__,
     description="Send log messages to remote syslog servers.",
